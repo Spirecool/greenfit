@@ -7,29 +7,33 @@
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
         {% block stylesheets %}
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
             <link href="{{ asset('css/style.css')}}" rel="stylesheet" >
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     
-            {{ encore_entry_link_tags('app') }}
+            {# {{ encore_entry_link_tags('app') }} #}
         {% endblock %}
 
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+            {# {{ encore_entry_script_tags('app') }} #}
              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         {% endblock %}
 
     </head>
 
     <body>
-         <div class="wrapper">
+         <div class="wrapper pt-5">
+    
             {{ include('header.html.twig') }}
             {% if  is_granted('ROLE_ADMIN') %}
+            <div>
                 {{ include('sidebar.html.twig') }}
+            </div>
             {% endif %}
-             <div class="container">
-            {% block body %}{% endblock %}
-             </div>
+            
+                <div class="main-container">
+                    {% block body %}{% endblock %}
+                </div>
         </div>
           <script type="text/javascript" src="js/app.js"></script>
           

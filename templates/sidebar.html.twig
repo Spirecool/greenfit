@@ -1,47 +1,57 @@
-  <div class="sidebar">
+  <div class="sidebar pt-5">
     <div class="sidebar-menu">
       <div class="profile">
-            <a href="/">
+      
+            <a href="/admin">
                 <img src="/images/logo.png" alt="Logo de Green Fit">
             </a>
             <p>Bienvenus</p>
       </div>
       <li class="item">
-            <a href="/" class="menu-btn">
+            <a href="/admin" class="menu-btn">
             <i class="fa fa-desktop"></i><span>Dashboard</span>
             </a>
       </li>
-      <li class="item" id="profile">
-            <a href="#profile" class="menu-btn">
-                <i class="fas fa-user-circle"></i><span>Partenaires <i class="fas fa-chevron-down drop-down"></i></span>
+        <li class="item" id="profile">
+            <a href="/admin/users" class="menu-btn">
+            <i class="fas fa-laptop-code"></i></i><span>Équipe technique </span>
             </a>
-        <div class="sub-menu">
+        {# <div class="sub-menu">
+            <a href="/admin/users/"><i class="fas fa-list"></i><span>Liste</span></a>
+            <a href="/admin/users/new"><i class="fas fa-plus"></i><span>Ajouter</span></a>
+            <a href="#"><i class="fas fa-pen-to-square"></i></i><span>Modifier</span></a>
+        </div> #}
+      </li>
+      <li class="item" id="profile">
+            <a href="/admin/partners" class="menu-btn">
+                <i class="fas fa-user-circle"></i><span>Partenaires </span>
+            </a>
+        {# <div class="sub-menu">
             <a href="#"><i class="fas fa-list"></i><span>Liste</span></a>
             <a href="#"><i class="fas fa-plus"></i><span>Ajouter</span></a>
             <a href="#"><i class="fas fa-pen-to-square"></i></i><span>Modifier</span></a>
-        </div>
+        </div> #}
       </li>
       <li class="item" id="messages">
-        <a href="#messages" class="menu-btn">
-          <i class="fas fa-envelope"></i><span>Structures <i class="fas fa-chevron-down drop-down"></i></span>
+        <a href="/admin/structures" class="menu-btn">
+          <i class="fas fa-envelope"></i><span>Structures </span>
         </a>
-        <div class="sub-menu">
+        {# <div class="sub-menu">
           <a href="#"><i class="fas fa-list"></i><span>Liste</span></a>
           <a href="#"><i class="fas fa-plus"></i><span>Ajouter</span></a>
           <a href="#"><i class="fas fa-pen-to-square"></i></i><span>Modifier</span></a>
-        </div>
+        </div> #}
       </li>
       <li class="item" id="settings">
-        <a href="#settings" class="menu-btn">
-          <i class="fas fa-cog"></i><span>Modules <i class="fas fa-chevron-down drop-down"></i></span>
+        <a href="/admin/modules" class="menu-btn">
+          <i class="fas fa-cog"></i><span>Modules </span>
         </a>
-        <div class="sub-menu">
+        {# <div class="sub-menu">
           <a href="#"><i class="fas fa-list"></i><span>Liste</span></a>
           <a href="#"><i class="fas fa-plus"></i><span>Ajouter</span></a>
           <a href="#"><i class="fas fa-pen-to-square"></i></i><span>Modifier</span></a>
-        </div>
+        </div> #}
       </li>
-     
     </div>
   </div>
   
