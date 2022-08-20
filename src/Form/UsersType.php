@@ -11,7 +11,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\Regex;
+// use Symfony\Component\Validator\Constraints\Regex;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 
 class UsersType extends AbstractType
@@ -30,6 +31,20 @@ class UsersType extends AbstractType
                 ],
                 'label' => 'Adresse Email'
                 ])
+            
+                
+            ->add('roles_users', ChoiceType::class, [
+                'required' => true,
+                'label' => 'Rôle de l\'utilisateur',
+                'choices'  => [
+                    'Selectionnez un rôle...' => null,
+                    'Équipe technique de Green FIT' => 'ROLE_ADMIN',
+                    'Partenaire de Green FIT' => 'ROLE_PARTNER',
+                    'Struture de Green FIT' => 'ROLE_STRUCTURE',                    
+                ],
+
+            ])
+    
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'invalid_message' => 'Le mot de passe et la confirmation doivent être identiques',
@@ -56,31 +71,27 @@ class UsersType extends AbstractType
                     ]
                 ],
             ])
-            // ->add('roles', ChoiceType::class, [
-            //     'required' => true,
-            //     'choices'  => [
-            //         'Selectionnez un rôle...' => null,
-            //         'Équipe technique de Green FIT' => 'ROLE_ADMIN',
-            //         'Partenaire de Green FIT' => 'ROLE_PARTNER',
-            //         'Struture de Green FIT' => 'ROLE_STRUCTURE',                    
-            //     ],
-            // ])
+
             ->add('lastname', TextType::class, [
                 'required' => true,
                 'label' => 'Nom de famille'
             ])
+
             ->add('firstname', TextType::class, [
                 'required' => true,
                 'label' => 'Prénom'
             ])
+
             ->add('address', TextType::class, [
                 'required' => true,
                 'label' => 'Adresse'
             ])
+            
             ->add('zipcode', TextType::class, [
                 'required' => true,
                 'label' => 'Code postal',
             ])
+
             ->add('city', TextType::class, [
                 'required' => true,
                 'label' => 'Ville'

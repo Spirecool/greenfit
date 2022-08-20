@@ -42,6 +42,9 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 100)]
     private ?string $city = null;
 
+    #[ORM\ManyToOne(inversedBy: 'users')]
+    private ?RolesUsers $roles_users = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -168,6 +171,18 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     public function setCity(string $city): self
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    public function getRolesUsers(): ?RolesUsers
+    {
+        return $this->roles_users;
+    }
+
+    public function setRolesUsers(?RolesUsers $roles_users): self
+    {
+        $this->roles_users = $roles_users;
 
         return $this;
     }
