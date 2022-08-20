@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UsersRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -44,6 +46,14 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\ManyToOne(inversedBy: 'users')]
     private ?RolesUsers $roles_users = null;
+
+    #[ORM\OneToMany(mappedBy: 'users', targetEntity: Partners::class)]
+    private Collection $partners;
+
+    public function __construct()
+    {
+        $this->partners = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -183,6 +193,36 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     public function setRolesUsers(?RolesUsers $roles_users): self
     {
         $this->roles_users = $roles_users;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Partners>
+     */
+    public function getPartners(): Collection
+    {
+        return $this->partners;
+    }
+
+    public function addPartner(Partners $partner): self
+    {
+        if (!$this->partners->contains($partner)) {
+            $this->partners->add($partner);
+            $partner->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removePartner(Partners $partner): self
+    {
+        if ($this->partners->removeElement($partner)) {
+            // set the owning side to null (unless already changed)
+            if ($partner->getUsers() === $this) {
+                $partner->setUsers(null);
+            }
+        }
 
         return $this;
     }
