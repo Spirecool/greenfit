@@ -14,7 +14,7 @@ final class Version20220820151850 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return '';
+        return 'Relation entre l\'entité USers et l\'entité RolesUsers';
     }
 
     public function up(Schema $schema): void
