@@ -14,7 +14,7 @@ final class Version20220820152911 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return '';
+        return 'Création de l\'entité Partners et de sa relation avec l\'entité Users';
     }
 
     public function up(Schema $schema): void

@@ -17,7 +17,7 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 
-class UsersType extends AbstractType
+class PersonType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -36,10 +36,10 @@ class UsersType extends AbstractType
             
                 
             ->add('roles_users', EntityType::class, [
-                'required' => true,
-                'label' => 'Rôle de l\'utilisateur',
-                'class' => RolesUsers::class,
-            ])
+                    'required' => true,
+                    'label' => 'Rôle de l\'utilisateur',
+                    'class' => RolesUsers::class,
+                ])
     
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,

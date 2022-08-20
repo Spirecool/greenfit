@@ -62,4 +62,5 @@ class Partners
 
         return $this;
     }
+
 }
