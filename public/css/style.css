@@ -204,7 +204,7 @@ h1, h2 {
 
 .wrapper .main-container {
   width: (100% - 250px);
-  /* margin-left: 250px; */
+  margin-left: 250px;
   /* padding: 15px; */
   /* background: url(background-admin-console.jpg) no-repeat; */
   background-size: cover;

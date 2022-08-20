@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\Regex;
 
 
 class UsersType extends AbstractType
@@ -34,16 +35,24 @@ class UsersType extends AbstractType
                 'invalid_message' => 'Le mot de passe et la confirmation doivent être identiques',
                 'label' => false,
                 'required' => true,
+                // 'constraints' => [
+                //     new Regex([
+                //         'pattern' => '/^(?=.*\d)(?=.*[A-Z])(?=.*[!#$%&*+\/=?^_`{|}~-])(?!.*(.)\1{2}).*[a-z].{8,}$/m',
+                //         'match' => true,
+                //         'message' => "Votre mot de passe doit comporter au moins huit caractères, dont des lettres majuscules et minuscules, un chiffre et un symbole."
+                //     ])
+                //     ],
                 'first_options' => [
                     'label' => 'Mot de passe',
                     'attr' => [
                         'placeholder' => 'Merci de saisir votre mot de passe'
-                    ]
+                    ],
+                
                 ],
                 'second_options' => [
                     'label' => 'Confirmez votre mot de passe',
                     'attr' => [
-                        'placeholder' => 'Merci de saisir un mot de passe'
+                        'placeholder' => 'Merci de saisir à nouveau votre mot de passe'
                     ]
                 ],
             ])

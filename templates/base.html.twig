@@ -27,10 +27,10 @@
             {{ include('header.html.twig') }}
             {% if  is_granted('ROLE_ADMIN') %}
             <div>
-                {# {{ include('sidebar.html.twig') }} #}
-
+                {{ include('sidebar.html.twig') }}
             </div>
             {% endif %}
+            
                 <div class="main-container">
                     {% block body %}{% endblock %}
                 </div>
