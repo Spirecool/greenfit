@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Oups, erreur 404
+{% endblock %}
+
+{%  block body %}
+    <div class="container">
+        <div class="g-5 py-5">
+                <h1 class="fw-bold lh-1 mb-5">NOOOOOOON...ne pleurez pas !</h1>
+                <p>C'est juste une erreur 404, cela signifie que la page que vous recherchez n'existe pas (ou plus).</p>
+                <p class="mb-5"> Revenez sur notre page d'accueil en cliquant sur le bouton ci-dessous.</p>
+                <a href="/"><button type="button" class="btn btn-dark">Page d'accueil</button</a>
+        </div>
+    </div>
+{% endblock %}
