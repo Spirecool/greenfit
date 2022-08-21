@@ -50,9 +50,13 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'users', targetEntity: Partners::class)]
     private Collection $partners;
 
+    #[ORM\OneToMany(mappedBy: 'users', targetEntity: Structures::class)]
+    private Collection $structures;
+
     public function __construct()
     {
         $this->partners = new ArrayCollection();
+        $this->structures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -232,5 +236,35 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     public function __toString(): string
     {
         return (string) $this->firstname;
+    }
+
+    /**
+     * @return Collection<int, Structures>
+     */
+    public function getStructures(): Collection
+    {
+        return $this->structures;
+    }
+
+    public function addStructure(Structures $structure): self
+    {
+        if (!$this->structures->contains($structure)) {
+            $this->structures->add($structure);
+            $structure->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStructure(Structures $structure): self
+    {
+        if ($this->structures->removeElement($structure)) {
+            // set the owning side to null (unless already changed)
+            if ($structure->getUsers() === $this) {
+                $structure->setUsers(null);
+            }
+        }
+
+        return $this;
     }
 }

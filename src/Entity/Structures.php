@@ -27,6 +27,9 @@ class Structures
     #[ORM\ManyToMany(targetEntity: Modules::class, inversedBy: 'structures')]
     private Collection $modules;
 
+    #[ORM\ManyToOne(inversedBy: 'structures')]
+    private ?Users $users = null;
+
     public function __construct()
     {
         $this->modules = new ArrayCollection();
@@ -93,6 +96,18 @@ class Structures
     public function removeModule(Modules $module): self
     {
         $this->modules->removeElement($module);
+
+        return $this;
+    }
+
+    public function getUsers(): ?Users
+    {
+        return $this->users;
+    }
+
+    public function setUsers(?Users $users): self
+    {
+        $this->users = $users;
 
         return $this;
     }
