@@ -20,8 +20,7 @@ class PartnersType extends AbstractType
             ->add('slug')
             ->add('users', PersonType::class, [
                 'data_class' => Users::class, 
-            ])
-           
+            ])  
         ;
     }
 
