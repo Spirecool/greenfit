@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\PartnersRepository;
+use App\Repository\StructuresRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: PartnersRepository::class)]
-class Partners
+#[ORM\Entity(repositoryClass: StructuresRepository::class)]
+class Structures
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -21,10 +21,10 @@ class Partners
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
-    #[ORM\ManyToOne(inversedBy: 'partners')]
-    private ?Users $users = null;
+    #[ORM\Column(length: 100)]
+    private ?string $manager_name = null;
 
-    #[ORM\ManyToMany(targetEntity: Modules::class, inversedBy: 'partners')]
+    #[ORM\ManyToMany(targetEntity: Modules::class, inversedBy: 'structures')]
     private Collection $modules;
 
     public function __construct()
@@ -61,14 +61,14 @@ class Partners
         return $this;
     }
 
-    public function getUsers(): ?Users
+    public function getManagerName(): ?string
     {
-        return $this->users;
+        return $this->manager_name;
     }
 
-    public function setUsers(?Users $users): self
+    public function setManagerName(string $manager_name): self
     {
-        $this->users = $users;
+        $this->manager_name = $manager_name;
 
         return $this;
     }
@@ -96,5 +96,4 @@ class Partners
 
         return $this;
     }
-
 }

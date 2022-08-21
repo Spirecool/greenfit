@@ -31,6 +31,7 @@ class PartnersController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            //on prend toute la partie qui est dans user
             $user = $form->get('users') -> getData();
             // dd($user -> getRolesUsers() -> getName());
             $r[]=$user -> getRolesUsers() -> getName();
@@ -42,6 +43,8 @@ class PartnersController extends AbstractController
             $user= new Users();
            
             return $this->redirectToRoute('app_partners_index', [], Response::HTTP_SEE_OTHER);
+
+
         }
 
     
@@ -74,6 +77,7 @@ class PartnersController extends AbstractController
 
         return $this->renderForm('partners/edit.html.twig', [
             'partner' => $partner,
+            'user' => $partner->getUsers(),
             'form' => $form,
         ]);
     }

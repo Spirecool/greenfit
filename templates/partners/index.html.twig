@@ -8,17 +8,33 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+           
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Rôle</th>
                 <th>Is_active</th>
+                <th>Modules</th>
                 <th>Slug</th>
                 <th>actions</th>
+
             </tr>
         </thead>
         <tbody>
         {% for partner in partners %}
             <tr>
-                <td>{{ partner.id }}</td>
+           
+                <td>{{ partner.users.firstname }}</td>
+                <td>{{ partner.users.lastname }}</td>
+                <td>{{ partner.users.RolesUsers.name }}</td>
                 <td>{{ partner.isActive ? 'Yes' : 'No' }}</td>
+                <td>
+                    {% if partner.Modules %}
+                    {% for module in partner.Modules %}
+                    {{module}}
+                    {% endfor %}
+                    {% endif %}
+                
+                </td>
                 <td>{{ partner.slug }}</td>
                 <td>
                     <a href="{{ path('app_partners_show', {'id': partner.id}) }}">show</a>

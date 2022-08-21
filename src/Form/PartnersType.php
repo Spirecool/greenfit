@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Modules;
 use App\Entity\Partners;
 use App\Entity\Users;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -20,7 +21,16 @@ class PartnersType extends AbstractType
             ->add('slug')
             ->add('users', PersonType::class, [
                 'data_class' => Users::class, 
-            ])  
+            ])
+
+            ->add('modules', EntityType::class, [
+                'required' => true,
+                'label' => 'Rôle de l\'utilisateur',
+                'class' => Modules::class,
+                'multiple' => true,
+                'expanded' => true,
+            ])
+            
         ;
     }
 

@@ -19,6 +19,18 @@
                 <th>Slug</th>
                 <td>{{ partner.slug }}</td>
             </tr>
+               <tr>
+                <th>Modules</th>
+                <td>
+                    {% if partner.Modules %}
+                    {% for module in partner.Modules %}
+                    {{module}}
+                    {% endfor %}
+                    {% endif %}
+                </td>
+            </tr>
+           
+            
         </tbody>
     </table>
 

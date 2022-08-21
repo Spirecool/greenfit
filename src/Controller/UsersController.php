@@ -8,6 +8,7 @@ use App\Repository\UsersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('admin/users')]
@@ -22,13 +23,23 @@ class UsersController extends AbstractController
     }
 
     #[Route('/new', name: 'app_users_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, UsersRepository $usersRepository): Response
+    public function new(Request $request, UsersRepository $usersRepository, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         $user = new Users();
         $form = $this->createForm(UsersType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                    $user,
+                    $form->get('password')->getData()
+                )
+            );
+
+
+
             // on met un tableau vide r et à l'intérieur on pousse la donnée nom à l'intérieur du tableau vide et on apsse ce tableau dans setRoles
             $r[]=$form->get('roles_users') -> getData() ->getName();
             $user->setRoles($r);
@@ -54,12 +65,19 @@ class UsersController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_users_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Users $user, UsersRepository $usersRepository): Response
+    public function edit(Request $request, Users $user, UsersRepository $usersRepository, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         $form = $this->createForm(UsersType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                    $user,
+                    $form->get('password')->getData()
+                )
+            );
             $usersRepository->add($user, true);
 
             return $this->redirectToRoute('app_users_index', [], Response::HTTP_SEE_OTHER);
