@@ -27,14 +27,7 @@ class Partners
     #[ORM\Column]
     private ?bool $is_sms = null;
 
-    #[ORM\ManyToMany(targetEntity: Modules::class, inversedBy: 'partners')]
-    private Collection $modules;
-
-    public function __construct()
-    {
-        $this->modules = new ArrayCollection();
-    }
-
+ 
     public function getId(): ?int
     {
         return $this->id;
@@ -88,28 +81,5 @@ class Partners
         return $this;
     }
 
-    /**
-     * @return Collection<int, Modules>
-     */
-    public function getModules(): Collection
-    {
-        return $this->modules;
-    }
-
-    public function addModule(Modules $module): self
-    {
-        if (!$this->modules->contains($module)) {
-            $this->modules->add($module);
-        }
-
-        return $this;
-    }
-
-    public function removeModule(Modules $module): self
-    {
-        $this->modules->removeElement($module);
-
-        return $this;
-    }
-
+ 
 }
