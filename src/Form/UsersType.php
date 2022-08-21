@@ -6,6 +6,7 @@ use App\Entity\RolesUsers;
 use App\Entity\Users;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -40,13 +41,18 @@ class UsersType extends AbstractType
                 'label' => 'Rôle de l\'utilisateur',
                 'class' => RolesUsers::class,
             ])
+        
     
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'invalid_message' => 'Le mot de passe et la confirmation doivent être identiques',
                 'label' => false,
                 'required' => true,
+<<<<<<< HEAD
              
+=======
+    
+>>>>>>> origin
                 'first_options' => [
                     'label' => 'Mot de passe',
                     'attr' => [

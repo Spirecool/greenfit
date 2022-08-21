@@ -24,6 +24,7 @@ class Partners
     #[ORM\ManyToOne(inversedBy: 'partners')]
     private ?Users $users = null;
 
+<<<<<<< HEAD
     #[ORM\ManyToMany(targetEntity: Modules::class, inversedBy: 'partners')]
     private Collection $modules;
 
@@ -32,6 +33,12 @@ class Partners
         $this->modules = new ArrayCollection();
     }
 
+=======
+    #[ORM\Column]
+    private ?bool $is_sms = null;
+
+ 
+>>>>>>> origin
     public function getId(): ?int
     {
         return $this->id;
@@ -73,6 +80,7 @@ class Partners
         return $this;
     }
 
+<<<<<<< HEAD
     /**
      * @return Collection<int, Modules>
      */
@@ -93,8 +101,22 @@ class Partners
     public function removeModule(Modules $module): self
     {
         $this->modules->removeElement($module);
+=======
+    public function isIsSms(): ?bool
+    {
+        return $this->is_sms;
+    }
+
+    public function setIsSms(bool $is_sms): self
+    {
+        $this->is_sms = $is_sms;
+>>>>>>> origin
 
         return $this;
     }
 
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> origin
 }

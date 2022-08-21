@@ -22,6 +22,7 @@ class PartnersType extends AbstractType
             ->add('users', PersonType::class, [
                 'data_class' => Users::class, 
             ])
+<<<<<<< HEAD
 
             ->add('modules', EntityType::class, [
                 'required' => true,
@@ -31,6 +32,10 @@ class PartnersType extends AbstractType
                 'expanded' => true,
             ])
             
+=======
+            ->add('is_sms')
+           
+>>>>>>> origin
         ;
     }
 
