@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Structures;
 use App\Form\StructuresType;
 use App\Repository\StructuresRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,13 +23,23 @@ class StructuresController extends AbstractController
     }
 
     #[Route('/new', name: 'app_structures_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, StructuresRepository $structuresRepository): Response
+
+    public function new(Request $request, StructuresRepository $structuresRepository, EntityManagerInterface $entityManager): Response
     {
+        // créer une structure et son user associé 
         $structure = new Structures();
         $form = $this->createForm(StructuresType::class, $structure);
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
+            //on prend toute la partie qui est dans user
+            $user = $form->get('users') -> getData();
+            // dd($user -> getRolesUsers() -> getName());
+            $r[]=$user -> getRolesUsers() -> getName();
+            $user->setRoles($r);
+            $entityManager->persist($form->get('users') -> getData());
+
             $structuresRepository->add($structure, true);
 
             return $this->redirectToRoute('app_structures_index', [], Response::HTTP_SEE_OTHER);
