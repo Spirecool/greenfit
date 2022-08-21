@@ -21,6 +21,7 @@ class PartnersType extends AbstractType
             ->add('users', PersonType::class, [
                 'data_class' => Users::class, 
             ])
+            ->add('is_sms')
            
         ;
     }

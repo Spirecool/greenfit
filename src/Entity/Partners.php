@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PartnersRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PartnersRepository::class)]
@@ -21,6 +23,17 @@ class Partners
 
     #[ORM\ManyToOne(inversedBy: 'partners')]
     private ?Users $users = null;
+
+    #[ORM\Column]
+    private ?bool $is_sms = null;
+
+    #[ORM\ManyToMany(targetEntity: Modules::class, inversedBy: 'partners')]
+    private Collection $modules;
+
+    public function __construct()
+    {
+        $this->modules = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -59,6 +72,42 @@ class Partners
     public function setUsers(?Users $users): self
     {
         $this->users = $users;
+
+        return $this;
+    }
+
+    public function isIsSms(): ?bool
+    {
+        return $this->is_sms;
+    }
+
+    public function setIsSms(bool $is_sms): self
+    {
+        $this->is_sms = $is_sms;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Modules>
+     */
+    public function getModules(): Collection
+    {
+        return $this->modules;
+    }
+
+    public function addModule(Modules $module): self
+    {
+        if (!$this->modules->contains($module)) {
+            $this->modules->add($module);
+        }
+
+        return $this;
+    }
+
+    public function removeModule(Modules $module): self
+    {
+        $this->modules->removeElement($module);
 
         return $this;
     }
