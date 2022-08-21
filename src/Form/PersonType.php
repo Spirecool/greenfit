@@ -48,10 +48,6 @@ class PersonType extends AbstractType
                 'invalid_message' => 'Le mot de passe et la confirmation doivent être identiques',
                 'label' => false,
                 'required' => true,
-<<<<<<< HEAD
-               
-=======
->>>>>>> origin
                 'first_options' => [
                     'label' => 'Mot de passe',
                     'attr' => [
