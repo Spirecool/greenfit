@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PartnersRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PartnersRepository::class)]
@@ -22,6 +24,10 @@ class Partners
     #[ORM\ManyToOne(inversedBy: 'partners')]
     private ?Users $users = null;
 
+    #[ORM\Column]
+    private ?bool $is_sms = null;
+
+ 
     public function getId(): ?int
     {
         return $this->id;
@@ -63,4 +69,17 @@ class Partners
         return $this;
     }
 
+    public function isIsSms(): ?bool
+    {
+        return $this->is_sms;
+    }
+
+    public function setIsSms(bool $is_sms): self
+    {
+        $this->is_sms = $is_sms;
+
+        return $this;
+    }
+
+ 
 }

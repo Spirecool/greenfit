@@ -6,6 +6,7 @@ use App\Entity\RolesUsers;
 use App\Entity\Users;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -40,19 +41,14 @@ class UsersType extends AbstractType
                 'label' => 'Rôle de l\'utilisateur',
                 'class' => RolesUsers::class,
             ])
+        
     
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'invalid_message' => 'Le mot de passe et la confirmation doivent être identiques',
                 'label' => false,
                 'required' => true,
-                // 'constraints' => [
-                //     new Regex([
-                //         'pattern' => '/^(?=.*\d)(?=.*[A-Z])(?=.*[!#$%&*+\/=?^_`{|}~-])(?!.*(.)\1{2}).*[a-z].{8,}$/m',
-                //         'match' => true,
-                //         'message' => "Votre mot de passe doit comporter au moins huit caractères, dont des lettres majuscules et minuscules, un chiffre et un symbole."
-                //     ])
-                //     ],
+    
                 'first_options' => [
                     'label' => 'Mot de passe',
                     'attr' => [
