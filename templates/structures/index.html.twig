@@ -9,9 +9,12 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Is_active</th>
+                <th>Est active</th>
                 <th>Slug</th>
-                <th>Manager_name</th>
+                <th>Adresse</th>
+                <th>Ville</th>
+                <th>Nom Gérant</th>
+                <th>Prénom Gérant</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,21 +22,24 @@
         {% for structure in structures %}
             <tr>
                 <td>{{ structure.id }}</td>
-                <td>{{ structure.isActive ? 'Yes' : 'No' }}</td>
+                <td>{{ structure.isActive ? 'Oui' : 'Non' }}</td>
                 <td>{{ structure.slug }}</td>
-                <td>{{ structure.managerName }}</td>
+                <td>{{ structure.users.city }}</td>
+                <td>{{ structure.users.address }}</td>
+                <td>{{ structure.users.lastname }}</td>
+                <td>{{ structure.users.lastname }}</td>
                 <td>
-                    <a href="{{ path('app_structures_show', {'id': structure.id}) }}">show</a>
-                    <a href="{{ path('app_structures_edit', {'id': structure.id}) }}">edit</a>
+                    <a href="{{ path('app_structures_show', {'id': structure.id}) }}">Voir</a>
+                    <a href="{{ path('app_structures_edit', {'id': structure.id}) }}">Éditer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucune donnée trouvée</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_structures_new') }}">Create new</a>
+    <a href="{{ path('app_structures_new') }}">Créer une nouvelle structure</a>
 {% endblock %}

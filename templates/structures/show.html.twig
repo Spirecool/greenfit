@@ -7,12 +7,9 @@
 
     <table class="table">
         <tbody>
+           
             <tr>
-                <th>Id</th>
-                <td>{{ structure.id }}</td>
-            </tr>
-            <tr>
-                <th>Is_active</th>
+                <th>Est active</th>
                 <td>{{ structure.isActive ? 'Yes' : 'No' }}</td>
             </tr>
             <tr>
@@ -20,15 +17,29 @@
                 <td>{{ structure.slug }}</td>
             </tr>
             <tr>
-                <th>Manager_name</th>
-                <td>{{ structure.managerName }}</td>
+                <th>Nom du gérant</th>
+                <td>{{ structure.users.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Prénom du gérant</th>
+                <td>{{ structure.users.firstname }}</td>
+            </tr>
+             <tr>
+                <th>Modules activés</th>
+                <td>
+                    {% if structure.Modules %}
+                    {% for module in structure.Modules %}
+                    {{module}}
+                    {% endfor %}
+                    {% endif %}
+                </td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_structures_index') }}">back to list</a>
+    <a href="{{ path('app_structures_index') }}">Revenir à la liste</a>
 
-    <a href="{{ path('app_structures_edit', {'id': structure.id}) }}">edit</a>
+    <a href="{{ path('app_structures_edit', {'id': structure.id}) }}">Éditer</a>
 
     {{ include('structures/_delete_form.html.twig') }}
 {% endblock %}
