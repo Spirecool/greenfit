@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Structures index{% endblock %}
+{% block title %}Liste des Structures{% endblock %}
 
 {% block body %}
-    <h1>Structures index</h1>
+    <h1>Liste des Structures</h1>
 
     <table class="table">
         <thead>
@@ -15,7 +15,7 @@
                 <th>Ville</th>
                 <th>Nom Gérant</th>
                 <th>Prénom Gérant</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -30,7 +30,7 @@
                 <td>{{ structure.users.lastname }}</td>
                 <td>
                     <a href="{{ path('app_structures_show', {'id': structure.id}) }}">Voir</a>
-                    <a href="{{ path('app_structures_edit', {'id': structure.id}) }}">Éditer</a>
+                    <a href="{{ path('app_structures_edit', {'id': structure.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}

@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modules index{% endblock %}
+{% block title %}Liste des Modules{% endblock %}
 
 {% block body %}
-    <h1>Modules index</h1>
+    <h1>Liste des Modules</h1>
 
     <table class="table">
         <thead>
@@ -11,8 +11,8 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Description</th>
-                <th>Is_default</th>
-                <th>actions</th>
+                <th>Est activé par défaut</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -21,19 +21,19 @@
                 <td>{{ module.id }}</td>
                 <td>{{ module.name }}</td>
                 <td>{{ module.description }}</td>
-                <td>{{ module.isDefault ? 'Yes' : 'No' }}</td>
+                <td>{{ module.isDefault ? 'Oui' : 'Non' }}</td>
                 <td>
-                    <a href="{{ path('app_modules_show', {'id': module.id}) }}">show</a>
-                    <a href="{{ path('app_modules_edit', {'id': module.id}) }}">edit</a>
+                    <a href="{{ path('app_modules_show', {'id': module.id}) }}">Voir</a>
+                    <a href="{{ path('app_modules_edit', {'id': module.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucun résultat trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_modules_new') }}">Create new</a>
+    <a href="{{ path('app_modules_new') }}">Créer un nouveau module</a>
 {% endblock %}

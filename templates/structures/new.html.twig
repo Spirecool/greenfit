@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Structures{% endblock %}
+{% block title %}Créer une nouvelle structure{% endblock %}
 
 {% block body %}
-    <h1>Create new Structures</h1>
+    <h1>Créer une nouvelle structure</h1>
 
     {{ include('structures/_form.html.twig') }}
 
-    <a href="{{ path('app_structures_index') }}">back to list</a>
+    <a href="{{ path('app_structures_index') }}">Revenir à la liste</a>
 {% endblock %}
