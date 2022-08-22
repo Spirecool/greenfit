@@ -27,6 +27,9 @@ class Partners
     #[ORM\ManyToMany(targetEntity: Modules::class, inversedBy: 'partners')]
     private Collection $modules;
 
+    #[ORM\Column(length: 100)]
+    private ?string $name = null;
+
     public function __construct()
     {
         $this->modules = new ArrayCollection();
@@ -93,6 +96,18 @@ class Partners
     public function removeModule(Modules $module): self
     {
         $this->modules->removeElement($module);
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }

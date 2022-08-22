@@ -1,25 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Partners{% endblock %}
+{% block title %}Fiche partenaire {% endblock %}
 
 {% block body %}
-    <h1>Partners</h1>
+    <h1>Fiche Partenaire {{ partner.slug }}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ partner.id }}</td>
-            </tr>
-            <tr>
-                <th>Est active</th>
-                <td>{{ partner.isActive ? 'Yes' : 'No' }}</td>
+                <th>Est actif</th>
+                <td>{{ partner.isActive ? 'Oui' : 'Non' }}</td>
             </tr>
             <tr>
                 <th>Slug</th>
                 <td>{{ partner.slug }}</td>
             </tr>
-<<<<<<< HEAD
             <tr>
                 <th>Modules</th>
                 <td>
@@ -29,16 +24,7 @@
                     {% endfor %}
                     {% endif %}
                 </td>
-            </tr>
-           
-            
-=======
-                <tr>
-                <th>Module SMS</th>
-                <td>{{ partner.isSms ? 'Yes' : 'No' }}</td>
-            </tr>
-          
->>>>>>> origin
+            </tr>    
         </tbody>
     </table>
 
