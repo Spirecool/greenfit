@@ -9,12 +9,70 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+   <!-- CARDS -->
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/apps/greenfit/src/Controller/AdminController.php'|file_link(0) }}">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/apps/greenfit/templates/admin/index.html.twig'|file_link(0) }}">templates/admin/index.html.twig</a></code></li>
-    </ul>
+        <h2 class="text-center py-5">Bienvenue </h2>
+
+        <div class="row text-center py-5">
+            <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0 ">
+                <div class="card bg-light rounded align-items-center p-4">
+                    <img src="/images/Icons/icone-sourire-enfant-jeu.png"  width="64px"
+                        loading="lazy">
+                        <i class="fas fa-laptop-code"></i></i>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h3>Équipe Technique</h3>
+                        </div>
+                        <div class="card-text">
+                            <p>Le jeu est un droit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="card bg-light rounded align-items-center p-4">
+                    <img src="/images/Icons/icone-partager-recycler-des-jouets.png"
+                         width="64px" loading="lazy">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h3>Partenaires</h3>
+                        </div>
+                        <div class="card-text">
+                            <p>Partager c'est vivre</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="card bg-light rounded align-items-center p-4">
+                    <img src="/images/Icons/icon-conference-enfants.png"
+                         loading="lazy">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h3>Structures</h3>
+                        </div>
+                        <div class="card-text">
+                            <p>Retrouvez nos conférences </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="card bg-light rounded align-items-center p-4">
+                    <img src="/images/Icons/icon-conference-enfants.png"
+                         loading="lazy">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h3>Modules</h3>
+                        </div>
+                        <div class="card-text">
+                            <p>Retrouvez nos conférences  </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 {% endblock %}

@@ -48,6 +48,9 @@ class UsersType extends AbstractType
                 'invalid_message' => 'Le mot de passe et la confirmation doivent être identiques',
                 'label' => false,
                 'required' => true,
+                // 'label_attr' => [
+                //     'class' => 'form-label mt-4'
+                // ],
              
                 'first_options' => [
                     'label' => 'Mot de passe',
