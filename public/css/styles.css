@@ -18,6 +18,26 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/****************/
+/* ICONS COLORS */
+/****************/
+
+.blue {
+  color: blue;
+}
+.green {
+  color: #5CC52A;
+}
+.purple {
+  color: rgb(136, 24, 158);
+}
+.red {
+  color: red;
+}
+a {
+    text-decoration: none;
+    color: #47623c;
+}
 body {
   background: white;
 }
