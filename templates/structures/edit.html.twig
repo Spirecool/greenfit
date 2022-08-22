@@ -3,7 +3,7 @@
 {% block title %}Éditer la structure {% endblock %}
 
 {% block body %}
-    <h1>Éditer la structure</h1>
+    <h1>Éditer la structure : {{ structure.name }}</h1>
 
     {{ include('structures/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 

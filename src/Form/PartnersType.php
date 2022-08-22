@@ -9,6 +9,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -18,9 +19,14 @@ class PartnersType extends AbstractType
     {
         $builder
             ->add('is_active')
+            ->add('name', TextType::class, [
+                'required' => true,
+                'label' => 'Nom du partenaire',
+            ])
             ->add('slug')
             ->add('users', PersonType::class, [
-                'data_class' => Users::class, 
+                'data_class' => Users::class,
+                'label' => 'Données du gérant',
             ])
             ->add('modules', EntityType::class, [
                 'required' => true,

@@ -38,8 +38,6 @@ class UsersController extends AbstractController
                 )
             );
 
-
-
             // on met un tableau vide r et à l'intérieur on pousse la donnée nom à l'intérieur du tableau vide et on apsse ce tableau dans setRoles
             $r[]=$form->get('roles_users') -> getData() ->getName();
             $user->setRoles($r);

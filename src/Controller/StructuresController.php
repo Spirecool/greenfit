@@ -33,6 +33,7 @@ class StructuresController extends AbstractController
 
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
             //on prend toute la partie qui est dans user
             $user = $form->get('users') -> getData();
             // dd($user -> getRolesUsers() -> getName());

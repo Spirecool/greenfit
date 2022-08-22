@@ -3,7 +3,7 @@
 {% block title %}Fiche partenaire {% endblock %}
 
 {% block body %}
-    <h1>Fiche Partenaire {{ partner.slug }}</h1>
+    <h1>Fiche Partenaire : {{ partner.name }}</h1>
 
     <table class="table">
         <tbody>
@@ -28,9 +28,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_partners_index') }}">back to list</a>
+    <a href="{{ path('app_partners_index') }}">Revenir à la liste</a>
 
-    <a href="{{ path('app_partners_edit', {'id': partner.id}) }}">edit</a>
+    <a href="{{ path('app_partners_edit', {'id': partner.id}) }}">Modifier</a>
 
     {{ include('partners/_delete_form.html.twig') }}
 {% endblock %}
