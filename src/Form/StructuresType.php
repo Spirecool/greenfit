@@ -20,7 +20,7 @@ class StructuresType extends AbstractType
             ->add('users', PersonType::class, [
                 'data_class' => Users::class, 
             ])
-            ->add('manager_name')
+            ->add('name')
             ->add('modules', EntityType::class, [
                 'required' => true,
                 'label' => 'Rôle de l\'utilisateur',

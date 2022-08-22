@@ -1,22 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Users index{% endblock %}
+{% block title %}Liste des Techniciens{% endblock %}
 
 {% block body %}
-    <h1>Users index</h1>
+    <h1>Liste des Techniciens</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Email</th>
-                <th>Roles</th>
-                <th>Lastname</th>
-                <th>Firstname</th>
-                <th>Address</th>
-                <th>Zipcode</th>
-                <th>City</th>
-                <th>actions</th>
+                <th>Adresse Email</th>
+                <th>Rôles</th>
+                <th>Nom du technicien</th>
+                <th>Prénom du technicien</th>
+                <th>Adresse</th>
+                <th>Code postal</th>
+                <th>Ville</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -31,17 +31,17 @@
                 <td>{{ user.zipcode }}</td>
                 <td>{{ user.city }}</td>
                 <td>
-                    <a href="{{ path('app_users_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('app_users_edit', {'id': user.id}) }}">edit</a>
+                    <a href="{{ path('app_users_show', {'id': user.id}) }}">Voir</a>
+                    <a href="{{ path('app_users_edit', {'id': user.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="10">no records found</td>
+                <td colspan="10">Aucun résultat trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_users_new') }}">Create new</a>
+    <a href="{{ path('app_users_new') }}">Créer un nouveau technicien</a>
 {% endblock %}

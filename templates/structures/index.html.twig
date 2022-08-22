@@ -8,8 +8,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>Nom de la structure</th>
                 <th>Est active</th>
+                <th> Modules activés </th>
                 <th>Slug</th>
                 <th>Adresse</th>
                 <th>Ville</th>
@@ -21,8 +22,9 @@
         <tbody>
         {% for structure in structures %}
             <tr>
-                <td>{{ structure.id }}</td>
+                <td>{{ structure.name }}</td>
                 <td>{{ structure.isActive ? 'Oui' : 'Non' }}</td>
+                <td>{{ structure.slug }}</td>
                 <td>{{ structure.slug }}</td>
                 <td>{{ structure.users.city }}</td>
                 <td>{{ structure.users.address }}</td>

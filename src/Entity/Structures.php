@@ -30,6 +30,9 @@ class Structures
     #[ORM\ManyToOne(inversedBy: 'structures')]
     private ?Users $users = null;
 
+    #[ORM\Column(length: 100)]
+    private ?string $name = null;
+
     public function __construct()
     {
         $this->modules = new ArrayCollection();
@@ -108,6 +111,18 @@ class Structures
     public function setUsers(?Users $users): self
     {
         $this->users = $users;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }
