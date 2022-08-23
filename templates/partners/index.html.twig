@@ -5,6 +5,13 @@
 {% block body %}
     <h1 class="py-5">Liste des Partenaires</h1>
 
+    <div>
+        <div class="search pb-5">
+            <i id="icon" class="fas fa-search icon"></i> 
+            <input id='searchid'></input>
+        </div>
+    </div>
+
     <table class="table">
         <thead>
             <tr>
@@ -35,7 +42,7 @@
                     {% endfor %}
                     {% endif %}
                 </td>
-                <td>{{ partner.users.firstname }}</td>
+       
                
         
              

@@ -6,9 +6,9 @@
 {% block body %}
 
 <div class="homepage">
-  <div class="loginContainer">
-  <div> <img src="/images/logo.png">
-  </div>
+  <div class="login-container banner-heading">
+        <div> <img src="/images/logo.png">
+        </div>
         <form action="{{ path('login') }}" method="post">
             <div class="form-group">
                     <label for="username">Adresse email:</label>
@@ -21,13 +21,16 @@
                             <input type="hidden"  name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
                             <input type="hidden" name="_target_path" value="{{ path('app_home') }}"/>
-                            <button class="btn btn-outline-dark btn-lg px-5 mt-5" type="submit">Se connecter</button>
-                             <input type="hidden" name="_target_path" value="/admin"/>
+                            <button class="btn btn-outline-dark btn-lg px-5 mt-5" id="login-button" type="submit">Se connecter</button>
+                            <input type="hidden" name="_target_path" value="/admin"/> 
             </div>
         </form>
+        {% if error %}
+        <div class="text-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
   </div>
 </div>
-
+{# 
  <div id="coco">
 
     <div class="global-container flex  ">
@@ -62,5 +65,5 @@
     </div>
 
 
-</div>
+</div> #}
 {% endblock %}
