@@ -3,19 +3,17 @@
 {% block title %}Liste des Structures{% endblock %}
 
 {% block body %}
-    <h1>Liste des Structures</h1>
+    <h1 class="py-5">Liste des Structures</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Nom de la structure</th>
                 <th>Est active</th>
-                <th>Modules activés </th>
-                <th>Slug</th>
-                <th>Adresse</th>
+                <th>Adresse Email</th>
                 <th>Ville</th>
+                <th>Modules activés </th>
                 <th>Nom Gérant</th>
-                <th>Prénom Gérant</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -23,12 +21,17 @@
         {% for structure in structures %}
             <tr>
                 <td>{{ structure.name }}</td>
-                <td>{{ structure.isActive ? 'Oui' : 'Non' }}</td>
-                <td>{{structure.slug}}</td>
-                <td>{{ structure.slug }}</td>
+                <td>{{ structure.isActive ? '<div class="on">Activé</div>' : '<div class="off">Désactivé</div>' }}</td>
+                <td>{{ structure.users.email }}</td>
                 <td>{{ structure.users.city }}</td>
-                <td>{{ structure.users.address }}</td>
-                <td>{{ structure.users.lastname }}</td>
+                <td>
+                    {% if structure.Modules %}
+                    {% for module in structure.Modules %}
+                    {{module}}
+                    {% endfor %}
+                    {% endif %}
+                </td>
+          
                 <td>{{ structure.users.lastname }}</td>
                 <td>
                     <a href="{{ path('app_structures_show', {'id': structure.id}) }}">Voir</a>

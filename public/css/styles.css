@@ -362,6 +362,20 @@ form{
 }
 
 /* TOGGLE BUTTON */
+.on, .off {
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  padding: 3px 8px;
+}
+.on, .off{ 
+  background-color: green;
+}
+
+.off { 
+  background-color: red;
+  text-align: center;
+}
 
 /* FORMS */
 
