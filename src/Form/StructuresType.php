@@ -21,6 +21,7 @@ class StructuresType extends AbstractType
             ->add('is_active', CheckboxType::class, [
                 'label_attr'    => [
                 'class' => 'checkbox-switch',
+                
                 ],
             ])
             ->add('name', TextType::class, [

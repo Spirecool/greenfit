@@ -167,7 +167,7 @@
     {%- if symbol -%}
         <div class="input-group">
             {{- block('form_widget_simple') -}}
-            <span class="input-group-text">{{ symbol|default('%') }}</span>
+            <span class="input-group-text ">{{ symbol|default('%') }}</span>
         </div>
     {%- else -%}
         {{- block('form_widget_simple') -}}

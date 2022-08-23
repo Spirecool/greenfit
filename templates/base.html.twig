@@ -25,10 +25,12 @@
     </head>
 
     <body>
+  
+         
         <div class="wrapper pt-5">
     
             {{ include('header.html.twig') }}
-            {% if  is_granted('ROLE_ADMIN') %}
+            {% if is_granted('ROLE_ADMIN') %}
             <div>
                 {{ include('sidebar.html.twig') }}
             </div>
