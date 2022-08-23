@@ -39,6 +39,8 @@ a {
     color: #47623c;
 }
 
+
+
 a:hover {
   color: white;
   transition: 0.2s;}
@@ -381,4 +383,108 @@ form{
 
 th {
   text-transform: uppercase;
+}
+
+/* SEARCH BAR  */
+
+
+
+/**********************/
+/*HOMEPAGE ADMIN CARDS*/
+/**********************/
+
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card-home {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card-home .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card-home .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card-home .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+.card-home:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    flex-direction: column;
+  }
+}
+
+
+/**************/
+/* LOGIN PAGE */
+/**************/
+
+
+.homepage{
+  min-height:100vh;
+  display:flex;
+  background:url("/images/login-background.jpg");
+  align-items:center;
+  justify-content:center;
+}
+.loginContainer{
+  background:#cfcfcf;
+  text-align: center;
+  max-width:480px;
+  width:100%;
+  border-radius:2px;
+  padding:20px;
+  margin:20px;
+}
+
+#box {
+  position: absolute;
+  width: 50px; 
+  height: 50px;
+  top: 50%; 
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  background: tomato;
+  border-radius: 50%;
+
 }
