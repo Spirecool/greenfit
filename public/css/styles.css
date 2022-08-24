@@ -104,7 +104,7 @@ text-transform: uppercase;
 
 .wrapper .header{
   z-index: 1;
-  background: #050505;
+  background: #12131C;
   position: fixed;
   width: calc(100% - 0%);
   height: 70px;
@@ -175,6 +175,11 @@ text-transform: uppercase;
   color: white
 }
 
+/* .wrapper {
+  background: url("/images/bg-web.jpg") ;
+} */
+
+
 /***********/
 /* SIDEBAR */
 /***********/
@@ -182,7 +187,7 @@ text-transform: uppercase;
 
 .wrapper .sidebar {
   z-index: 1;
-  background: #101114;
+  background: rgb(255, 255, 255);
   position: fixed;
   top: 70px;
   width: 250px;
@@ -217,7 +222,7 @@ text-transform: uppercase;
 
 .wrapper .sidebar .sidebar-menu .item .menu-btn{
   display: block;
-  color: #fff;
+  color: black;
   position: relative;
   padding: 25px 20px;
   transition: 0.3s;
@@ -236,41 +241,6 @@ text-transform: uppercase;
   float: right;
   font-size: 12px;
   margin-top: 3px;
-}
-
-/* Sub Menus */
-
-.wrapper .sidebar .sidebar-menu .item .sub-menu {
-  background: #5bc52a52;
-  overflow: hidden;
-  max-height: 0;
-  transition: 0.3s;
-  transition-property: background, max-height ;
-}
-
-.wrapper .sidebar .sidebar-menu .item .sub-menu a {
-  display: block;
-  position: relative;
-  color: #fff;
-  white-space: no-wrap ;
-  font-size: 15px;
-  padding: 20px;
-  border-bottom: 1px solid rgb(173, 171, 171);
-  transition: 0.3s;
-  transition-property: background;
-}
-
-.wrapper .sidebar .sidebar-menu .item .sub-menu a:hover {
-  background: #5bc52abe;
-}
-
-.wrapper .sidebar .sidebar-menu .item .sub-menu i {
-  padding-right: 20px;
-  font-size: 10px;
-}
-
-.wrapper .sidebar .sidebar-menu .item:target .sub-menu {
-  max-height: 500px;
 }
 
 /*************/
@@ -351,7 +321,6 @@ text-transform: uppercase;
 /**************/
 /* LOGIN FORM */
 /**************/
-
 
 
 .global-container{
@@ -577,3 +546,71 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   border-right: 2px solid rgba(0, 0, 0, 0.75);
 }
 
+
+/*************/
+/* PRELOADER */
+/*************/
+.preloader {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  perspective: 1600px;
+  perspective-origin: 20% 50%;
+  transition: 0.5s all;
+  opacity: 1;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #f3f3f3;
+  border-top: 3px solid #5CC52A;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation: spin 1s infinite linear;
+}
+
+.preloader.fade {
+  opacity: 0;
+}
+
+.icon-preloader {
+  background-size: cover;
+  width: 52px;
+  height: 67px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation: ico 5s infinite linear;
+  transform-style: preserve-3d;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ico {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
