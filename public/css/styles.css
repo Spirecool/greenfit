@@ -29,7 +29,7 @@
   color: #5CC52A;
 }
 .purple {
-  color: rgb(136, 24, 158);
+  color: grey;
 }
 .red {
   color: red;
@@ -77,6 +77,9 @@ h1 .heading-color{
   background-color: #fff;
   padding: 6px 12px;
   margin-right: 12px;
+}
+.modify-button {
+  background-color: #ececec;
 }
 
 .back-index:hover{
@@ -552,3 +555,4 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   overflow: hidden;
   border-right: 2px solid rgba(0, 0, 0, 0.75);
 }
+

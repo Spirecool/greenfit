@@ -28,9 +28,17 @@
         </tbody>
     </table>
 
-    <button class="back-index"><a href="{{ path('app_partners_index') }}"><i class="fa-solid fa-person-walking-arrow-loop-left"></i>Revenir à la liste</a></button>
+    <div>
+        <button class="btn modify-button mt-4"><a href="{{ path('app_partners_edit', {'id': partner.id}) }}">Modifier</a></button>
+    </div>
+    <div class="pt-4">
+        <i class="fa-solid fa-circle-arrow-left pl-3"></i>
+        <a href="{{ path('app_partners_index') }}">Revenir à la liste</a>
+    </div>
 
-    <button class="edit"><a href="{{ path('app_partners_edit', {'id': partner.id}) }}"><i class="fa-solid fa-pen purple"></i>Modifier</a></button>
+    {# <button class="back-index"><a href="{{ path('app_partners_index') }}"><i class="fa-solid fa-person-walking-arrow-loop-left"></i>Revenir à la liste</a></button>
+
+    <button class="edit"><a href="{{ path('app_partners_edit', {'id': partner.id}) }}"><i class="fa-solid fa-pen purple"></i>Modifier</a></button> #}
 
     {{ include('partners/_delete_form.html.twig') }}
 
