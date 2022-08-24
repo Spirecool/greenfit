@@ -1,8 +1,8 @@
 /****************/
 /* GOOGLE FONTS */
 /****************/
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 
 /***********/
@@ -39,17 +39,20 @@ a {
     color: #47623c;
 }
 
-
-
 a:hover {
-  color: white;
+  color: #5CC52A;
   transition: 0.2s;}
 
 body {
   background: white;
 }
 h1, h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 .heading-color{
+  color: #5CC52A;
+  text-transform: uppercase;
 }
 
 
@@ -512,4 +515,40 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   color: #5CC52A;
   text-transform: uppercase;
   transition: 0.4s;
+}
+
+/* H1 STYLE */
+
+.anim-typewriter {
+  display: inline-block;
+}
+.anim-typewriter .heading {
+  animation: typewriter 2s linear 1s 1 normal both,
+    blinkTextCursor 500ms step-end infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(0, 0, 0, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.heading {
+  display: inline-block;
+  text-shadow: 0px 10px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-bottom: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgba(0, 0, 0, 0.75);
 }

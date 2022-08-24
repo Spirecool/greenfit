@@ -5,15 +5,13 @@
             <a href="/admin">
                 <div class="title"> Green <span>FIT</span></div>
             </a>
+
              {% if  is_granted('ROLE_ADMIN') %}
-            
-                  <div class="sidebar-btn">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-      
+            <div class="sidebar-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
             {% endif %}
             
-      
         <ul>
           <li><a href="/"><i class="fa fa-home"></i></a></li>
           <li><a href="/logout" class="logout"><i class="fa fa-power-off "></i></a></li>
