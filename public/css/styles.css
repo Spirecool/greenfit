@@ -369,7 +369,11 @@ form{
 	margin:20px;
 }
 
+/*****************/
 /* TOGGLE BUTTON */
+/*****************/
+
+
 .on, .off {
   color: white;
   border-radius: 6px;
@@ -385,11 +389,14 @@ form{
   text-align: center;
 }
 
+/*********/
 /* FORMS */
+/*********/
 
 th {
   text-transform: uppercase;
 }
+
 
 /* SEARCH BAR  */
 
@@ -417,20 +424,20 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   transition: 0.4s;
 }
 
-.card-home .card_image {
+.card-home .card-image {
   width: inherit;
   height: inherit;
   border-radius: 40px;
 }
 
-.card-home .card_image img {
+.card-home .card-image img {
   width: inherit;
   height: inherit;
   border-radius: 40px;
   object-fit: cover;
 }
 
-.card-home .card_title {
+.card-home .card-title {
   text-align: center;
   border-radius: 0px 0px 40px 40px;
   font-family: sans-serif;
@@ -447,6 +454,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 }
 
 .title-white {
+
+  text-transform: uppercase;
   color: white;
 }
 
