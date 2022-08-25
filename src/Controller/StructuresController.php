@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Structures;
 use App\Form\StructuresType;
+use App\Repository\ModulesRepository;
 use App\Repository\StructuresRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -57,6 +58,17 @@ class StructuresController extends AbstractController
     {
         return $this->render('structures/show.html.twig', [
             'structure' => $structure,
+        ]);
+    }
+
+// Structures / modules
+
+    #[Route('/modules/{id}', name: 'app_structures_modules', methods: ['GET'])]
+    public function showModules(Structures $structure, ModulesRepository $moduleRepository): Response
+    {   $modules = $moduleRepository->findAll();
+        return $this->render('structures/show_modules.html.twig', [
+            'structure' => $structure,
+            'modules' => $modules,
         ]);
     }
 

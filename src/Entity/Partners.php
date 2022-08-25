@@ -30,9 +30,13 @@ class Partners
     #[ORM\Column(length: 100)]
     private ?string $name = null;
 
+    #[ORM\OneToMany(mappedBy: 'partners', targetEntity: Structures::class)]
+    private Collection $structures;
+
     public function __construct()
     {
         $this->modules = new ArrayCollection();
+        $this->structures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -108,6 +112,36 @@ class Partners
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Structures>
+     */
+    public function getStructures(): Collection
+    {
+        return $this->structures;
+    }
+
+    public function addStructure(Structures $structure): self
+    {
+        if (!$this->structures->contains($structure)) {
+            $this->structures->add($structure);
+            $structure->setPartners($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStructure(Structures $structure): self
+    {
+        if ($this->structures->removeElement($structure)) {
+            // set the owning side to null (unless already changed)
+            if ($structure->getPartners() === $this) {
+                $structure->setPartners(null);
+            }
+        }
 
         return $this;
     }

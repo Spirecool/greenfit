@@ -63,6 +63,14 @@ class PartnersController extends AbstractController
         ]);
     }
 
+    #[Route('/structures/{id}', name: 'app_partners_structures', methods: ['GET'])]
+    public function showPartners(Partners $partner): Response
+    {
+        return $this->render('partners/show_structures.html.twig', [
+            'partner' => $partner,
+        ]);
+    }
+
     #[Route('/{id}/edit', name: 'app_partners_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Partners $partner, PartnersRepository $partnersRepository): Response
     {

@@ -1,6 +1,8 @@
 /****************/
 /* GOOGLE FONTS */
 /****************/
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
 
@@ -8,6 +10,7 @@
 /***********/
 /* GENERAL */
 /***********/
+
 
 *{
   margin: 0;
@@ -31,6 +34,7 @@ transition: 0.2s;}
 body {
 background: rgb(243, 243, 243);
 }
+
 h1, h2 {
 font-family: 'Montserrat', sans-serif;
 text-align: center;
@@ -41,15 +45,20 @@ color: #5CC52A;
 text-transform: uppercase;
 }
 
+
 /****************/
 /* ICONS COLORS */
 /****************/
+
 
 .blue {
   color: blue;
 }
 .green {
   color: #5CC52A;
+}
+.white {
+  color: #fff;
 }
 .purple {
   color: grey;
@@ -59,10 +68,10 @@ text-transform: uppercase;
 }
 
 
-
 /***********/
 /* BUTTONS */
 /***********/
+
 
 .save {
   background-color: #5CC52A;
@@ -99,9 +108,11 @@ text-transform: uppercase;
   padding: 6px 12px;
 }
 
+
 /**********/
 /* HEADER */
 /**********/
+
 
 .wrapper .header{
   z-index: 1;
@@ -198,7 +209,6 @@ text-transform: uppercase;
   transition-property: width;
   overflow-y: auto;
 }
-
 
 .wrapper .sidebar .sidebar-menu {
   overflow: hidden;
@@ -365,9 +375,11 @@ form{
   text-align: center;
 }
 
+
 /*********/
 /* FORMS */
 /*********/
+
 
 th {
   text-transform: uppercase;
@@ -381,6 +393,7 @@ th {
 /**********************/
 /*HOMEPAGE ADMIN CARDS*/
 /**********************/
+
 
 .cards-list {
   z-index: 0;
@@ -404,7 +417,6 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   width: inherit;
   height: inherit;
   border-radius: 30px;
-
 }
 
 .card-home .card-image img {
@@ -425,7 +437,6 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 }
 
 .card-home .card-title p {
-
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   letter-spacing: 1.2px;
@@ -513,9 +524,10 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   transition: 0.4s;
   border: 0.25px solid black
 }
-
-/* H1 STYLE */
-
+/***********
+/*H1 STYLE*/
+/**********/
+/* 
 .anim-typewriter {
   display: inline-block;
 }
@@ -548,12 +560,13 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid rgba(0, 0, 0, 0.75);
-}
+} */
 
 
 /*************/
 /* PRELOADER */
 /*************/
+
 
 .preloader {
   height: 100%;
@@ -619,3 +632,9 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     transform: rotateY(360deg);
   }
 }
+
+
+/* footer {
+  position: absolute;
+  bottom: 0;
+} */
