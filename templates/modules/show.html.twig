@@ -22,9 +22,17 @@
         </tbody>
     </table>
 
+    <div>
+        <button class="btn modify-button mt-4"><a href="{{ path('app_modules_edit', {'id': module.id}) }}">Modifier</a></button>
+    </div>
+    <div class="pt-4">
+        <i class="fa-solid fa-circle-arrow-left pl-3"></i>
+        <a href="{{ path('app_modules_index') }}">Revenir à la liste</a>
+    </div>
+{# 
     <a href="{{ path('app_modules_index') }}">Revenir à la liste</a>
 
-    <a href="{{ path('app_modules_edit', {'id': module.id}) }}">Éditer</a>
+    <a href="{{ path('app_modules_edit', {'id': module.id}) }}">Éditer</a> #}
 
     {{ include('modules/_delete_form.html.twig') }}
 {% endblock %}

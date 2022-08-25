@@ -7,7 +7,10 @@
 
     {{ include('users/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
 
-    <a href="{{ path('app_users_index') }}">Revenir à la liste</a>
+    <div class="pt-4">
+        <i class="fa-solid fa-circle-arrow-left pl-3"></i>
+        <a href="{{ path('app_users_index') }}">Revenir à la liste</a>
+    </div>
 
     {{ include('users/_delete_form.html.twig') }}
 {% endblock %}

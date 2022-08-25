@@ -37,9 +37,12 @@
         </tbody>
     </table>
 
+<div>
+    <button class="btn modify-button mt-4"><a href="{{ path('app_structures_edit', {'id': structure.id}) }}">Modifier</a></button>
+</div>
+<div class="pt-4">
+    <i class="fa-solid fa-circle-arrow-left pl-3"></i>
     <a href="{{ path('app_structures_index') }}">Revenir à la liste</a>
-
-    <a href="{{ path('app_structures_edit', {'id': structure.id}) }}">Modifier</a>
-
+</div>
     {{ include('structures/_delete_form.html.twig') }}
 {% endblock %}

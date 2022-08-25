@@ -2,7 +2,7 @@
 /* GOOGLE FONTS */
 /****************/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
 
 
 /***********/
@@ -16,6 +16,29 @@
   text-decoration: none;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: #5CC52A;
+}
+
+a:hover {
+color: #5CC52A;
+transition: 0.2s;}
+
+body {
+background: rgb(243, 243, 243);
+}
+h1, h2 {
+font-family: 'Montserrat', sans-serif;
+text-align: center;
+}
+
+h1 .heading-color{
+color: #5CC52A;
+text-transform: uppercase;
 }
 
 /****************/
@@ -29,31 +52,12 @@
   color: #5CC52A;
 }
 .purple {
-  color: rgb(136, 24, 158);
+  color: grey;
 }
 .red {
   color: red;
 }
-a {
-    text-decoration: none;
-    color: #47623c;
-}
 
-a:hover {
-  color: #5CC52A;
-  transition: 0.2s;}
-
-body {
-  background: white;
-}
-h1, h2 {
-  font-family: 'Montserrat', sans-serif;
-}
-
-h1 .heading-color{
-  color: #5CC52A;
-  text-transform: uppercase;
-}
 
 
 /***********/
@@ -78,6 +82,9 @@ h1 .heading-color{
   padding: 6px 12px;
   margin-right: 12px;
 }
+.modify-button {
+  background-color: #ececec;
+}
 
 .back-index:hover{
   background-color: black;
@@ -98,7 +105,7 @@ h1 .heading-color{
 
 .wrapper .header{
   z-index: 1;
-  background: #050505;
+  background: #12131C;
   position: fixed;
   width: calc(100% - 0%);
   height: 70px;
@@ -169,6 +176,11 @@ h1 .heading-color{
   color: white
 }
 
+/* .wrapper {
+  background: url("/images/bg-web.jpg") ;
+} */
+
+
 /***********/
 /* SIDEBAR */
 /***********/
@@ -176,7 +188,7 @@ h1 .heading-color{
 
 .wrapper .sidebar {
   z-index: 1;
-  background: #101114;
+  background: rgb(255, 255, 255);
   position: fixed;
   top: 70px;
   width: 250px;
@@ -211,7 +223,7 @@ h1 .heading-color{
 
 .wrapper .sidebar .sidebar-menu .item .menu-btn{
   display: block;
-  color: #fff;
+  color: black;
   position: relative;
   padding: 25px 20px;
   transition: 0.3s;
@@ -230,41 +242,6 @@ h1 .heading-color{
   float: right;
   font-size: 12px;
   margin-top: 3px;
-}
-
-/* Sub Menus */
-
-.wrapper .sidebar .sidebar-menu .item .sub-menu {
-  background: #5bc52a52;
-  overflow: hidden;
-  max-height: 0;
-  transition: 0.3s;
-  transition-property: background, max-height ;
-}
-
-.wrapper .sidebar .sidebar-menu .item .sub-menu a {
-  display: block;
-  position: relative;
-  color: #fff;
-  white-space: no-wrap ;
-  font-size: 15px;
-  padding: 20px;
-  border-bottom: 1px solid rgb(173, 171, 171);
-  transition: 0.3s;
-  transition-property: background;
-}
-
-.wrapper .sidebar .sidebar-menu .item .sub-menu a:hover {
-  background: #5bc52abe;
-}
-
-.wrapper .sidebar .sidebar-menu .item .sub-menu i {
-  padding-right: 20px;
-  font-size: 10px;
-}
-
-.wrapper .sidebar .sidebar-menu .item:target .sub-menu {
-  max-height: 500px;
 }
 
 /*************/
@@ -332,11 +309,19 @@ h1 .heading-color{
 }
 
 
+#welcome {
+  color: red;
+}
+@media screen and (max-width: 650px) {
+  #welcome { 
+            display: none;
+           }
+}
+
 
 /**************/
 /* LOGIN FORM */
 /**************/
-
 
 
 .global-container{
@@ -346,12 +331,6 @@ h1 .heading-color{
 	justify-content: center;
 }
 
-#coco {
-    background: url("/images/login-background.jpg");
-    opacity: 0.8;
-    background-position: center center;
-    height: 100vh;
-}
 form{
 	padding-top: 10px;
 	font-size: 14px;
@@ -366,7 +345,11 @@ form{
 	margin:20px;
 }
 
+/*****************/
 /* TOGGLE BUTTON */
+/*****************/
+
+
 .on, .off {
   color: white;
   border-radius: 6px;
@@ -382,11 +365,14 @@ form{
   text-align: center;
 }
 
+/*********/
 /* FORMS */
+/*********/
 
 th {
   text-transform: uppercase;
 }
+
 
 /* SEARCH BAR  */
 
@@ -406,50 +392,59 @@ th {
 
 .card-home {
   margin: 30px auto;
-  width: 300px;
-  height: 300px;
-  border-radius: 40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 30px;
 box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
   cursor: pointer;
   transition: 0.4s;
 }
 
-.card-home .card_image {
+.card-home .card-image {
   width: inherit;
   height: inherit;
-  border-radius: 40px;
+  border-radius: 30px;
+
 }
 
-.card-home .card_image img {
+.card-home .card-image img {
   width: inherit;
   height: inherit;
-  border-radius: 40px;
+  border-radius: 30px;
   object-fit: cover;
 }
 
-.card-home .card_title {
+.card-home .card-title {
   text-align: center;
   border-radius: 0px 0px 40px 40px;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size:24px;
   margin-top: -80px;
   height: 40px;
 }
 
+.card-home .card-title p {
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+
+}
 .card-home:hover {
-  transform: scale(0.9, 0.9);
+  transform: scale(1.1, 1.1);
   box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
     -5px -5px 30px 15px rgba(0,0,0,0.22);
 }
 
 .title-white {
-  color: white;
+  text-transform: uppercase;
+  color: white;  
 }
 
-.title-black {
+/* .title-black {
   color: black;
-}
+} */
 
 @media all and (max-width: 500px) {
   .card-list {
@@ -508,6 +503,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   color: #fff;
   border:none;
   text-transform: uppercase;
+  border-radius: 8px;
 }
 
 #login-button:hover {
@@ -515,6 +511,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   color: #5CC52A;
   text-transform: uppercase;
   transition: 0.4s;
+  border: 0.25px solid black
 }
 
 /* H1 STYLE */
@@ -551,4 +548,74 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid rgba(0, 0, 0, 0.75);
+}
+
+
+/*************/
+/* PRELOADER */
+/*************/
+
+.preloader {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  perspective: 1600px;
+  perspective-origin: 20% 50%;
+  transition: 0.5s all;
+  opacity: 1;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #f3f3f3;
+  border-top: 3px solid #5CC52A;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation: spin 1s infinite linear;
+}
+
+.preloader.fade {
+  opacity: 0;
+}
+
+.icon-preloader {
+  background-size: cover;
+  width: 52px;
+  height: 67px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation: ico 5s infinite linear;
+  transform-style: preserve-3d;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ico {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
 }

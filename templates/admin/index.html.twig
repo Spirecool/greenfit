@@ -8,107 +8,47 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
+{# <div class="example-wrapper"> #} 
+{# images sur 2 lignes de 2 colonnes #}
+<div>
    <!-- CARDS -->
 
-        <h2 class="text-center pt-3 pb-3">Bienvenue </h2>
+        <h2 class="text-center pt-5 pb-5">Bienvenue {{ app.user.firstname}}</h2>
 
-        {# <div class="row text-center py-5">
-            <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0 ">
-                <div class="card bg-light rounded align-items-center p-4">
-                    <img src="/images/Icons/icone-sourire-enfant-jeu.png"  width="64px"
-                        loading="lazy">
-                        <i class="fas fa-laptop-code"></i></i>
-                    <div class="card-body">
-                        <div class="card-title">
-                            <h3>Équipe Technique</h3>
-                        </div>
-                        <div class="card-text">
-                            <p>Le jeu est un droit</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                <div class="card bg-light rounded align-items-center p-4">
-                    <img src="/images/Icons/icone-partager-recycler-des-jouets.png"
-                         width="64px" loading="lazy">
-                    <div class="card-body">
-                        <div class="card-title">
-                            <h3>Partenaires</h3>
-                        </div>
-                        <div class="card-text">
-                            <p>Partager c'est vivre</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                <div class="card bg-light rounded align-items-center p-4">
-                    <img src="/images/Icons/icon-conference-enfants.png"
-                         loading="lazy">
-                    <div class="card-body">
-                        <div class="card-title">
-                            <h3>Structures</h3>
-                        </div>
-                        <div class="card-text">
-                            <p>Retrouvez nos conférences </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                <div class="card bg-light rounded align-items-center p-4">
-                    <img src="/images/Icons/icon-conference-enfants.png"
-                         loading="lazy">
-                    <div class="card-body">
-                        <div class="card-title">
-                            <h3>Modules</h3>
-                        </div>
-                        <div class="card-text">
-                            <p>Retrouvez nos conférences  </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-</div> #}
 
 <div class="cards-list">
 <a href="/admin/users/">  
 <div class="card-home">
-  <div class="card_image"> <img src="/images/cards/card-1.jpg" /> 
+  <div class="card-image"> <img src="/images/cards/card-1.jpg" /> 
   </div>
-  <div class="card_title title-white">
+  <div class="card-title title-white">
     <p>Équipe technique</p>
   </div>
 </div>
 </a>
 <a href="/admin/partners/">
   <div class="card-home">
-  <div class="card_image"> <img src="/images/cards/card-3.jpg" />
+  <div class="card-image"> <img src="/images/cards/card-3.jpg" />
   </div>
-  <div class="card_title title-white">
+  <div class="card-title title-white">
     <p>Partenaires</p>
   </div>
 </div>
 </a>
 <a href="/admin/structures/">
 <div class="card-home">
-  <div class="card_image"> <img src="/images/cards/card-3.jpg" /> 
+  <div class="card-image"> <img src="/images/cards/card-3.jpg" /> 
   </div>
-  <div class="card_title title-white">
+  <div class="card-title title-white">
     <p>Structures</p>
   </div>
 </div>
 </a>
 <a href="/admin/modules/">
 <div class="card-home">
-  <div class="card_image title-white"> <img src="/images/cards/card-4.jpg" /> 
+  <div class="card-image title-white"> <img src="/images/cards/card-4.jpg" /> 
   </div>
-  <div class="card_title title-white">
+  <div class="card-title title-white">
     <p>Modules</p>
   </div>
   </div>

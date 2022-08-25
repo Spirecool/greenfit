@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="Site de présentation et de réservation des Hôtels Hypnos">
+		<meta name="description" content="Application de gestion l'entreprise Green Fit">
 		<meta name="keywords" content="Green Fit, salles de sport, fitness, france">
 		<meta name="Robots" content="follow">
         <title>
-            {% block title %}Welcome! {% endblock %}
+            {% block title %}Welcome!{% endblock %}
         </title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 
@@ -25,9 +25,8 @@
     </head>
 
     <body>
-   
+ 
         <div class="wrapper pt-5" id="homepage">
-    
             {{ include('header.html.twig') }}
             {% if is_granted('ROLE_ADMIN') %}
             <div>
@@ -36,13 +35,16 @@
             {% endif %}
             <div class="container pt-5">
                 <div class="main-container">
-                    {% block body %}{% endblock %}
-                </div>
+                    {% block body %}{% endblock %}    
+                            {{ include('footer.html.twig') }}             
+                </div>                
             </div>
         </div>
 
+{# Scripts JS #}
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{{ asset('js/animation-preload.js') }}"></script>
 
     </body>
 
