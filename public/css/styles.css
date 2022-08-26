@@ -187,9 +187,14 @@ text-transform: uppercase;
   color: white
 }
 
-/* .wrapper {
-  background: url("/images/bg-web.jpg") ;
-} */
+#welcome-message {
+  color: red;
+}
+@media screen and (max-width: 650px) {
+  #welcome { 
+            display: none;
+           }
+}
 
 
 /***********/
@@ -264,7 +269,9 @@ text-transform: uppercase;
   /* padding: 15px; */
   /* background: url(background-admin-console.jpg) no-repeat; */
   background-size: cover;
-  height: 100vh;
+  /* height: 100vh; */
+  height: 100%;
+
   transition: 0.3s;
 }
 
@@ -311,22 +318,13 @@ text-transform: uppercase;
 /*************/
 
 .wrapper .main-container .content {
-  background: red;
+  /* background: red; */
   padding: 20px;
   margin-top: 100px;
   font-size: 16px;
   margin-bottom: 10px;
 }
 
-
-#welcome {
-  color: red;
-}
-@media screen and (max-width: 650px) {
-  #welcome { 
-            display: none;
-           }
-}
 
 
 /**************/
@@ -365,6 +363,7 @@ form{
   border-radius: 6px;
   text-align: center;
   padding: 3px 8px;
+  max-width: 80%;
 }
 .on, .off{ 
   background-color: green;
@@ -383,6 +382,9 @@ form{
 
 th {
   text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 36px;
+
 }
 
 
@@ -634,7 +636,9 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 }
 
 
-/* footer {
-  position: absolute;
+footer {
+  
   bottom: 0;
-} */
+  width: 80%;
+
+}

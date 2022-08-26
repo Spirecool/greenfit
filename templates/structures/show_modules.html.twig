@@ -3,7 +3,8 @@
 {% block title %}Fiche Structure{% endblock %}
 
 {% block body %}
-    <h1>Fiche Structure : {{structure.name}}</h1>
+  
+       <h1 class="py-5">Fiche Structure : <span class="heading-color"> {{structure.name}} </span> : Partenaires</span></h1>
 
     <table class="table">
         <tbody>
@@ -12,27 +13,23 @@
                 <th scope="col">Modules activés</th> </tr>
             <tr>  
                     {% for module in modules %}
+                    <tr>
                     <td>
                     {{module.name}}
                     </td>
                     {% for m in structure.modules %}
                     <td>
-                    {{module.id == m.id ? 'oui' : 'non'}}
+                    {{module.id == m.id ? '<div class="on ">Oui</div>' : '<div class="off ">Non</div>'}}
                     </td>
                     {% else %}
                     <td>non</td>
+                    </tr>
                     {% endfor %}
                     {% endfor %}
             </tr>
         </tbody>
     </table>
 
-<div>
-    <button class="btn modify-button mt-4"><a href="{{ path('app_structures_edit', {'id': structure.id}) }}">Modifier</a></button>
-</div>
-<div class="pt-4">
-    <i class="fa-solid fa-circle-arrow-left pl-3"></i>
-    <a href="{{ path('app_structures_index') }}">Revenir à la liste</a>
-</div>
-    {{ include('structures/_delete_form.html.twig') }}
+
+    
 {% endblock %}

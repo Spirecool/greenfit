@@ -38,16 +38,10 @@ class PartnersController extends AbstractController
             $user->setRoles($r);
             $entityManager->persist($form->get('users') -> getData());
             $partnersRepository->add($partner, true);
-            //persiste
-            
-            $user= new Users();
-           
+            //persiste    
+            $user= new Users();    
             return $this->redirectToRoute('app_partners_index', [], Response::HTTP_SEE_OTHER);
-
-
         }
-
-    
 
         return $this->renderForm('partners/new.html.twig', [
             'partner' => $partner,
@@ -63,6 +57,8 @@ class PartnersController extends AbstractController
         ]);
     }
 
+    // Partners / Structures
+
     #[Route('/structures/{id}', name: 'app_partners_structures', methods: ['GET'])]
     public function showPartners(Partners $partner): Response
     {
@@ -70,6 +66,7 @@ class PartnersController extends AbstractController
             'partner' => $partner,
         ]);
     }
+    
 
     #[Route('/{id}/edit', name: 'app_partners_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Partners $partner, PartnersRepository $partnersRepository): Response
