@@ -187,15 +187,21 @@ text-transform: uppercase;
   color: white
 }
 
-#welcome-message {
-  color: red;
-}
-@media screen and (max-width: 650px) {
-  #welcome { 
+
+@media screen and (max-width: 4500px) {
+  #welcome-message { 
             display: none;
            }
 }
 
+/* #home-icon {
+  color: red;
+} */
+@media screen and (max-width: 455px) {
+  .header-icon { 
+            display: none;
+           }
+}
 
 /***********/
 /* SIDEBAR */
@@ -383,8 +389,7 @@ form{
 th {
   text-transform: uppercase;
   font-weight: bold;
-  padding-top: 36px;
-
+  padding-bottom: 18px !important
 }
 
 
